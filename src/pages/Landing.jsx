@@ -21,22 +21,25 @@ const theme = createTheme({
 });
 
 const backgroundStyles = css`
-  background-color: #f5f5f5;
+  background-color: #d9d9d9;
   background-image: url(${require("../img/macbook-pro.jpg")});
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
   background-position: center;
   height: 100vh;
+  widht: 100vw;
   display: flex;
   align-items: center;
   text-align: left;
-  padding: 0 300px;
+  padding: 0 22%;
   justify-content: flex-start;
+  margin: 20% 0;
 `;
 
 const textStylesH1 = css`
   color: white;
-  font-size: 3rem;
-  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+  font-family: Roboto, sans-serif;
   font-weight: 700;
   text-shadow: 1px 1px black;
   width: 350px;
@@ -44,9 +47,9 @@ const textStylesH1 = css`
 
 const textStylesP = css`
   color: white;
-  font-family: "Roboto", sans-serif;
   font-weight: 400;
-  font-size: 25px;
+  font-family: Roboto, sans-serif;
+  font-size: 1.5rem;
   text-shadow: 1px 1px black;
 `;
 
@@ -97,5 +100,5 @@ function Landing() {
     </ThemeProvider>
   );
 }
-
+export { backgroundStyles, textStylesH1, textStylesP, buttonStyles };
 export default Landing;
