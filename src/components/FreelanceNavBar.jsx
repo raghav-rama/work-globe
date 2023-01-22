@@ -30,9 +30,6 @@ const theme = createTheme({
 });
 
 const FreelanceNavBar = (props) => {
-  // const [modalOpen, setModalOpen] = React.useState(false);
-  // const handleModalOpen = () => setModalOpen(true);
-  // const handleModalClose = () => setModalOpen(false);
   const { handleModalOpen } = props;
   return (
     <ThemeProvider theme={theme}>
