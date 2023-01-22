@@ -3,8 +3,29 @@ import FreelanceNavBar from "../components/FreelanceNavBar";
 
 import { Box, Paper, Typography, ButtonBase, Modal } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { styled } from "@mui/material/styles";
 
 import JobPostModal from "../components/PostJobModal";
+
+const Item = styled(Paper)(({theme}) => ({
+  [theme.breakpoints.down('sm')]: {
+    width: '80vw',
+    height: '5vh',
+  }
+}));
+
+const Text = styled(Typography)(({theme}) => ({
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '14px',
+  }
+}));
+
+const Image = styled("img")(({theme}) => ({
+  [theme.breakpoints.down('sm')]: {
+    width: '10vw',
+    height: '5vh',
+  }
+}));
 
 const Freelancer = () => {
   const navigate = useNavigate();
@@ -60,7 +81,10 @@ const Freelancer = () => {
           height: "auto",
           flexDirection: "column",
           gap: 1.2,
-          m: 2,
+          mt: 2,
+          mb: 2,
+          width: "100%",
+          minHeight: "50vh",
         }}
       >
         {jobs.map((job) =>
@@ -79,7 +103,7 @@ const Freelancer = () => {
                 })
               }
             >
-              <Paper
+              <Item
                 elevation={3}
                 sx={{
                   p: 2,
@@ -88,7 +112,7 @@ const Freelancer = () => {
                   alignItems: "center",
                 }}
               >
-                <img
+                <Image
                   src={require(`../img/${job.logo}`)}
                   alt={job.logo}
                   height={100}
@@ -102,22 +126,22 @@ const Freelancer = () => {
                     flexDirection: "column",
                   }}
                 >
-                  <Typography
+                  <Text
                     variant="h6"
                     component="p"
                     sx={{ textAlign: "left", ml: 1, color: "black" }}
                   >
                     {job.role}
-                  </Typography>
-                  <Typography
+                  </Text>
+                  <Text
                     variant="subtitle2"
                     component="p"
                     sx={{ textAlign: "left", ml: 1, color: "black" }}
                   >
                     {job.experience}
-                  </Typography>
+                  </Text>
                 </Box>
-              </Paper>
+              </Item>
             </ButtonBase>
           )
         )}
@@ -125,8 +149,8 @@ const Freelancer = () => {
         <Modal
           open={modalOpen}
           onClose={handleModalClose}
-          aria-labelledby="modal-modal-title"
-          aria-describedby="modal-modal-description"
+          aria-labelledby="modal-title"
+          aria-describedby="modal-description"
         >
           <JobPostModal
             input={input}
