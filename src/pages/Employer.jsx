@@ -73,7 +73,7 @@ function Employer() {
     <>
       <EmployerNavBar />
       <ThemeProvider theme={theme}>
-        <Box sx={{ flexGrow: 1, m: 2 }}>
+        <Box sx={{ flexGrow: 1, m: 2 , minHeight: "50vh"}}>
           <Grid container spacing={2}>
             {jobs.map((job) => (
               <>
@@ -171,7 +171,6 @@ function Employer() {
                 />
               </>
             ))}
-            ;
           </Grid>
         </Box>
       </ThemeProvider>
