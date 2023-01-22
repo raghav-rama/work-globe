@@ -18,7 +18,7 @@ const Item = styled(Paper)(({ theme }) => ({
 
 const Footer = () => {
   return (
-    <>
+    <React.Fragment>
       {/* <h1>tmkc</h1> */}
       <Box sx={{ flexGrow: 1 }}>
         <Box
@@ -137,22 +137,8 @@ const Footer = () => {
             </Item>
           </Grid>
         </Grid>
-        <Typography
-          variant="h6"
-          component="p"
-          sx={{ color: "white", backgroundColor: "#595959" }}
-        >
-          Work Globe
-        </Typography>
-        <Typography
-          variant="subtitle1"
-          component="p"
-          sx={{ color: "white", backgroundColor: "#595959" }}
-        >
-          Copyright ©2022
-        </Typography>
       </Box>
-    </>
+    </React.Fragment>
   );
 };
 
