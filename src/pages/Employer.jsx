@@ -8,9 +8,29 @@ import {
   Button,
   Paper,
 } from "@mui/material";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { ThemeProvider, createTheme, styled } from "@mui/material/styles";
 
 import EmployerNavBar from "../components/EmployerNavBar";
+
+const Item = styled(Paper)(({theme}) => ({
+  [theme.breakpoints.down('sm')]: {
+    width: '100%',
+    height: '5vh',
+  }
+}));
+
+const Text = styled(Typography)(({theme}) => ({
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '10px',
+  }
+}));
+
+const Image = styled("img")(({theme}) => ({
+  [theme.breakpoints.down('sm')]: {
+    width: '10vw',
+    height: '5vh',
+  }
+}));
 
 const theme = createTheme({
   components: {
@@ -57,10 +77,10 @@ function Employer() {
           <Grid container spacing={2}>
             {jobs.map((job) => (
               <>
-                <Grid item xs={1} />
-                <Grid item xs={7}>
-                  <ButtonBase>
-                    <Paper
+                <Grid item md={1} lg={1} xl={1} hidden={{ xs: true, sm: true }}/>
+                <Grid item xs={8} sm={8} md={7} lg={7} xl={7}>
+                  <ButtonBase variant="contained">
+                    <Item
                       elevation={3}
                       sx={{
                         p: 2,
@@ -69,7 +89,7 @@ function Employer() {
                         alignItems: "center",
                       }}
                     >
-                      <img
+                      <Image
                         src={require(`../img/${job.logo}`)}
                         alt={job.logo}
                         height={100}
@@ -84,27 +104,31 @@ function Employer() {
                           m: 2,
                         }}
                       >
-                        <Typography
+                        <Text
                           variant="h6"
                           component="p"
-                          sx={{ color: "black" }}
+                          sx={{ color: "black", }}
                         >
                           {job.role}
-                        </Typography>
-                        <Typography
+                        </Text>
+                        <Text
                           variant="subtitle2"
                           component="p"
-                          sx={{ color: "black" }}
+                          sx={{ color: "black", }}
                         >
                           {job.experience}
-                        </Typography>
+                        </Text>
                       </Box>
-                    </Paper>
+                    </Item>
                   </ButtonBase>
                 </Grid>
                 <Grid
                   item
-                  xs={3}
+                  xs={4}
+                  sm={4}
+                  md={3}
+                  lg={3}
+                  xl={3}
                   sx={{
                     display: "flex",
                     flexDirection: "column",
@@ -116,9 +140,10 @@ function Employer() {
                     Select
                   </Button>
                 </Grid>
-                <Grid item xs={1} />
+                <Grid item md={1} lg={1} xl={1} hidden={{ xs: true, sm: true }}/>
               </>
-            ))};
+            ))}
+            ;
           </Grid>
         </Box>
       </ThemeProvider>
