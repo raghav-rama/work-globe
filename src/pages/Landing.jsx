@@ -26,29 +26,35 @@ const backgroundStyles = css`
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  height: 100vh;
+  height: 100vmin;
   display: flex;
   align-items: center;
   text-align: left;
   padding: 0 32%;
   justify-content: flex-start;
+  @media (max-width: 600px) {
+    padding: 0 25%;
+  }
 `;
 
 const textStylesH1 = css`
   color: white;
-  font-size: 2rem;
+  font-size: 2.5vw;
   font-family: Roboto, sans-serif;
   font-weight: 700;
   text-shadow: 1px 1px black;
-  width: 350px;
+  // width: 350px;
   margin-top: 20%;
+  @media (max-width: 600px) {
+    margin-top: 40%;
+  }
 `;
 
 const textStylesP = css`
   color: white;
   font-weight: 400;
   font-family: Roboto, sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.5vw;
   text-shadow: 1px 1px black;
 `;
 
@@ -57,6 +63,7 @@ const buttonStyles = css`
   margin-right: 1rem;
   justify-content: center;
   border-radius: 25px;
+  font-size: 1vw;
   width: 200px;
   height: 50px;
   background-color: white;
@@ -65,6 +72,10 @@ const buttonStyles = css`
   &:hover {
     transform: scale(1.05);
     background-color: aliceblue;
+  }
+  @media (max-width: 600px) {
+    width: 10px;
+    height: 25px;
   }
 `;
 
