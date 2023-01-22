@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import { Box, Typography, Grid, Button, TextField } from "@mui/material";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { ThemeProvider, createTheme, styled } from "@mui/material/styles";
 
 const theme = createTheme({
   components: {
@@ -19,6 +19,18 @@ const theme = createTheme({
   },
 });
 
+const HText = styled(Typography)(({theme}) => ({
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '20px',
+  }
+}));
+
+const MyBox = styled(Box)(({theme}) => ({
+  [theme.breakpoints.down('sm')]: {
+    width: '75vw',
+  }
+}));
+
 const JobPostModal = (props) => {
   const {
     input,
@@ -29,15 +41,16 @@ const JobPostModal = (props) => {
   } = props;
   return (
     <ThemeProvider theme={theme}>
-      <Box
+      <MyBox
         sx={{
           position: "absolute",
           top: "50%",
           left: "50%",
           transform: "translate(-50%, -50%)",
-          width: 400,
+          width: "30%",
+          height: "auto",
           bgcolor: "background.paper",
-          border: "2px solid #000",
+          border: "2px solid aliceblue",
           borderRadius: 3,
           boxShadow: 24,
           p: 4,
@@ -45,9 +58,9 @@ const JobPostModal = (props) => {
       >
         <Grid container spacing={3} justify="center">
           <Grid item xs={12}>
-            <Typography variant="h6" component="h2">
+            <HText variant="h6" component="h2">
               Tell Us About The Project
-            </Typography>
+            </HText>
           </Grid>
           <Grid item xs={12}>
             <TextField
@@ -103,7 +116,7 @@ const JobPostModal = (props) => {
           </Grid>
           <Grid item xs={4} />
         </Grid>
-      </Box>
+      </MyBox>
     </ThemeProvider>
   );
 };
