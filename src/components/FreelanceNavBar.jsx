@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { ThemeProvider, createTheme, styled } from "@mui/material/styles";
 import { AppBar, Button, Typography, Box, Toolbar } from "@mui/material";
 
 const theme = createTheme({
@@ -29,6 +29,21 @@ const theme = createTheme({
   },
 });
 
+const Text = styled(Typography)(({theme}) => ({
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '24px',
+    fontWeight: 'bold',
+  }
+}));
+
+const RButton = styled(Button)(({theme}) => ({
+  [theme.breakpoints.down('sm')]: {
+    width: '35vw',
+    height: '5vh',
+    fontSize: '13px',
+  }
+}));
+
 const FreelanceNavBar = (props) => {
   const { handleModalOpen } = props;
   return (
@@ -36,16 +51,16 @@ const FreelanceNavBar = (props) => {
       <Box component="nav" sx={{ flexGrow: 1 }}>
         <AppBar position="static">
           <Toolbar>
-            <Typography
+            <Text
               variant="h5"
               component="p"
               sx={{ flexGrow: 1, textAlign: "left", ml: 2 }}
             >
               My Posted Jobs
-            </Typography>
-            <Button variant="contained" onClick={handleModalOpen}>
+            </Text>
+            <RButton variant="contained" onClick={handleModalOpen}>
               Post Job
-            </Button>
+            </RButton>
           </Toolbar>
         </AppBar>
       </Box>
