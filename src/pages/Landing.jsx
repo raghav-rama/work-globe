@@ -27,13 +27,11 @@ const backgroundStyles = css`
   background-repeat: no-repeat;
   background-position: center;
   height: 100vh;
-  widht: 100vw;
   display: flex;
   align-items: center;
   text-align: left;
-  padding: 0 22%;
+  padding: 0 32%;
   justify-content: flex-start;
-  margin: 20% 0;
 `;
 
 const textStylesH1 = css`
@@ -43,6 +41,7 @@ const textStylesH1 = css`
   font-weight: 700;
   text-shadow: 1px 1px black;
   width: 350px;
+  margin-top: 20%;
 `;
 
 const textStylesP = css`
@@ -100,5 +99,5 @@ function Landing() {
     </ThemeProvider>
   );
 }
-export { backgroundStyles, textStylesH1, textStylesP, buttonStyles };
+export { backgroundStyles, textStylesH1, textStylesP, buttonStyles}; 
 export default Landing;
