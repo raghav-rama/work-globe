@@ -12,24 +12,24 @@ import { ThemeProvider, createTheme, styled } from "@mui/material/styles";
 
 import EmployerNavBar from "../components/EmployerNavBar";
 
-const Item = styled(Paper)(({theme}) => ({
-  [theme.breakpoints.down('sm')]: {
-    width: '100%',
-    height: '5vh',
-  }
+const Item = styled(Paper)(({ theme }) => ({
+  [theme.breakpoints.down("sm")]: {
+    width: "100%",
+    height: "5vh",
+  },
 }));
 
-const Text = styled(Typography)(({theme}) => ({
-  [theme.breakpoints.down('sm')]: {
-    fontSize: '10px',
-  }
+const Text = styled(Typography)(({ theme }) => ({
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "10px",
+  },
 }));
 
-const Image = styled("img")(({theme}) => ({
-  [theme.breakpoints.down('sm')]: {
-    width: '10vw',
-    height: '5vh',
-  }
+const Image = styled("img")(({ theme }) => ({
+  [theme.breakpoints.down("sm")]: {
+    width: "10vw",
+    height: "5vh",
+  },
 }));
 
 const theme = createTheme({
@@ -77,7 +77,21 @@ function Employer() {
           <Grid container spacing={2}>
             {jobs.map((job) => (
               <>
-                <Grid item md={1} lg={1} xl={1} hidden={{ xs: true, sm: true }}/>
+                <Grid
+                  item
+                  md={1}
+                  lg={1}
+                  xl={1}
+                  sx={{
+                    display: {
+                      xs: "none",
+                      sm: "none",
+                      md: "block",
+                      lg: "block",
+                      xl: "block",
+                    },
+                  }}
+                />
                 <Grid item xs={8} sm={8} md={7} lg={7} xl={7}>
                   <ButtonBase variant="contained">
                     <Item
@@ -107,14 +121,14 @@ function Employer() {
                         <Text
                           variant="h6"
                           component="p"
-                          sx={{ color: "black", }}
+                          sx={{ color: "black" }}
                         >
                           {job.role}
                         </Text>
                         <Text
                           variant="subtitle2"
                           component="p"
-                          sx={{ color: "black", }}
+                          sx={{ color: "black" }}
                         >
                           {job.experience}
                         </Text>
@@ -140,7 +154,21 @@ function Employer() {
                     Select
                   </Button>
                 </Grid>
-                <Grid item md={1} lg={1} xl={1} hidden={{ xs: true, sm: true }}/>
+                <Grid
+                  item
+                  md={1}
+                  lg={1}
+                  xl={1}
+                  sx={{
+                    display: {
+                      xs: "none",
+                      sm: "none",
+                      md: "block",
+                      lg: "block",
+                      xl: "block",
+                    },
+                  }}
+                />
               </>
             ))}
             ;
