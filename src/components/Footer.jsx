@@ -16,6 +16,12 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
+const Text = styled(Typography)(({theme}) => ({
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '15px',
+  }
+}));
+
 const Footer = () => {
   return (
     <React.Fragment>
@@ -25,7 +31,7 @@ const Footer = () => {
           sx={{ alignText: "left", color: "white", backgroundColor: "#595959" }}
         >
           <Box sx={{ display: "flex", gap: "2" }}>
-            <Typography
+            <Text
               variant="subtitle1"
               component="div"
               sx={{ textAlign: "left", ml: 1 }}
@@ -46,19 +52,19 @@ const Footer = () => {
               <IconButton>
                 <YouTubeIcon sx={{ color: "white" }} />
               </IconButton>
-            </Typography>
+            </Text>
           </Box>
         </Box>
         <Grid container spacing={0} sx={{ backgroundColor: "#595959" }}>
           <Grid item xs={6}>
             <Item variant="outline" square>
-              <Typography
+              <Text
                 variant="h6"
                 component="p"
                 sx={{ textAlign: "left", ml: 1, color: "white" }}
               >
                 Product by:
-              </Typography>
+              </Text>
             </Item>
           </Grid>
           <Grid item xs={3}>
@@ -66,74 +72,74 @@ const Footer = () => {
               <Box
                 sx={{ flexGrow: 1, display: "flex", flexDirection: "column" }}
               >
-                <Typography
+                <Text
                   variant="h6"
                   component="p"
                   sx={{ textAlign: "left", ml: 1, color: "white" }}
                 >
                   Resources:
-                </Typography>
-                <Typography
+                </Text>
+                <Text
                   variant="h6"
                   component="p"
                   sx={{ textAlign: "left", ml: 1, color: "white" }}
                 >
                   Help and Support
-                </Typography>
-                <Typography
+                </Text>
+                <Text
                   variant="h6"
                   component="p"
                   sx={{ textAlign: "left", ml: 1, color: "white" }}
                 >
                   Blog
-                </Typography>
-                <Typography
+                </Text>
+                <Text
                   variant="h6"
                   component="p"
                   sx={{ textAlign: "left", ml: 1, color: "white" }}
                 >
                   Community
-                </Typography>
-                <Typography
+                </Text>
+                <Text
                   variant="h6"
                   component="p"
                   sx={{ textAlign: "left", ml: 1, color: "white" }}
                 >
                   Affiliate Program
-                </Typography>
+                </Text>
               </Box>
             </Item>
           </Grid>
           <Grid item xs={3}>
             <Item variant="outline" square>
-              <Typography
+              <Text
                 variant="h6"
                 component="p"
                 sx={{ textAlign: "left", ml: 1, color: "white" }}
               >
                 For Talent
-              </Typography>
-              <Typography
+              </Text>
+              <Text
                 variant="h6"
                 component="p"
                 sx={{ textAlign: "left", ml: 1, color: "white" }}
               >
                 Find Work
-              </Typography>
-              <Typography
+              </Text>
+              <Text
                 variant="h6"
                 component="p"
                 sx={{ textAlign: "left", ml: 1, color: "white" }}
               >
                 Find Freelance work WorldWide
-              </Typography>
-              <Typography
+              </Text>
+              <Text
                 variant="h6"
                 component="p"
                 sx={{ textAlign: "left", ml: 1, color: "white" }}
               >
                 Work in USA
-              </Typography>
+              </Text>
             </Item>
           </Grid>
         </Grid>
