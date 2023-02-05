@@ -22,7 +22,7 @@ const theme = createTheme({
 
 const backgroundStyles = css`
   background-color: #d9d9d9;
-  background-image: url(${require("../img/macbook-pro.jpg")});
+  background-image: url(${require("../img/macbook.png")});
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -81,7 +81,10 @@ const buttonStyles = css`
 
 const buttonContainerStyles = css`
   display: block;
-  margin-bottom: 100px;
+  margin-bottom: 200px;
+  @media (max-width: 600px) {
+    margin-bottom: 100px;
+  }
 `;
 
 function Landing() {
